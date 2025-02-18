@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class WalletUi : MonoBehaviour
+[RequireComponent(typeof(TextMeshProUGUI))]
+public class WalletUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Wallet _wallet;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private TextMeshProUGUI _text;
+
+    private void OnEnable() =>
+        _wallet.CoinsCountChanged += UpdateText;
+
+    private void OnDisable() =>
+        _wallet.CoinsCountChanged -= UpdateText;
+
+    private void Start() =>
+        _text = GetComponent<TextMeshProUGUI>();
+
+    private void UpdateText(int coinsCount) =>
+        _text.text = coinsCount.ToString();
 }
