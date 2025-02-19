@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Player), typeof(Mover), typeof(Jumper))]
+[ RequireComponent(typeof(Health))]
 public class KeyboardInput : MonoBehaviour
 {
     private const string Horizontal = nameof(Horizontal);
@@ -8,11 +9,13 @@ public class KeyboardInput : MonoBehaviour
 
     private Mover _mover;
     private Jumper _jumper;
+    private Health _health;
 
     private void Start()
     {
         _mover = GetComponent<Mover>();
         _jumper = GetComponent<Jumper>();
+        _health = GetComponent<Health>();
     }
 
     private void Update() =>
@@ -20,6 +23,9 @@ public class KeyboardInput : MonoBehaviour
 
     private void ProcessInput()
     {
+        if (_health.IsAlive == false)
+            return;
+
         float horizontalDirection = Input.GetAxisRaw(Horizontal);
         _mover.Move(horizontalDirection);
 

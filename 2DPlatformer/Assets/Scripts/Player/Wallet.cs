@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
+    [SerializeField] GameObjectPool _pool;
+
     private int _coinsCount = 0;
 
     public event Action<int> CoinsCountChanged;
@@ -11,7 +13,7 @@ public class Wallet : MonoBehaviour
     {
         if (collision.TryGetComponent(out Coin coin))
         {
-            coin.Release();
+            _pool.Release(coin);
             _coinsCount++;
             CoinsCountChanged?.Invoke(_coinsCount);
         }

@@ -1,10 +1,9 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    private const string Horizontal = nameof(Horizontal);
-
     private readonly float _velosityGate = .2f;
 
     [SerializeField] private Animator _animator;
@@ -14,7 +13,7 @@ public class Player : MonoBehaviour
     private bool _onGround;
     private int _groundLayer;
 
-    public Animator Animator { get => _animator; private set => _animator = value; }
+    public Animator Animator { get => _animator; set => _animator = value; }
     public Rigidbody2D Rigidbody { get; set; }
     public bool OnGround { get => _onGround; private set => _onGround = value; }
 
@@ -22,10 +21,11 @@ public class Player : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody2D>();
         _groundLayer = LayerMask.GetMask("Ground");
+        Animator.SetBool("IsAlive", true);
     }
 
     private void Update() =>
-        CheckGround();
+            CheckGround();
 
     private void CheckGround()
     {
@@ -37,6 +37,6 @@ public class Player : MonoBehaviour
         else
             _onGround = false;
 
-        _animator.SetBool("OnGround", _onGround);
+        Animator.SetBool("OnGround", _onGround);
     }
 }
