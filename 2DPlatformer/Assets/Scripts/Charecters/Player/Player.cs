@@ -9,9 +9,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D Rigidbody { get; private set; }
     public bool OnGround { get; set; }
 
-    private void Awake()
-    {
+    private void Awake() =>
         Rigidbody = GetComponent<Rigidbody2D>();
-        Animator.SetBool("IsAlive", true);
-    }
 }
