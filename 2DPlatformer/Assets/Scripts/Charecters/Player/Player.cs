@@ -1,14 +1,19 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+[RequireComponent(typeof(PlayerAnimator))]
+public abstract class Player : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    protected Animator StateMachine;
 
-    public Animator Animator { get => _animator; private set => _animator = value; }
-    public Rigidbody2D Rigidbody { get; private set; }
-    public bool OnGround { get; set; }
+    private void Awake()
+    {
+        StateMachine = GetComponent<PlayerAnimator>().Animator;
+        SetStateMachineParams();
+    }
 
-    private void Awake() =>
-        Rigidbody = GetComponent<Rigidbody2D>();
+    private void SetStateMachineParams()
+    {
+        bool isAlive = true;
+        StateMachine.SetBool(PlayerAnimatorData.Params.IsAlive, isAlive);
+    }
 }

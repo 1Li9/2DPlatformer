@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6930352813290437206}
-  - component: {fileID: 6218250062234096764}
   - component: {fileID: 7519624933776951518}
+  - component: {fileID: 878318924190303061}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -35,19 +35,6 @@ Transform:
   - {fileID: 2220847551302289128}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6218250062234096764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86259638396419348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7452dc8b2f57f49b2f77f6f09a4954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isTurnedToRight: 1
 --- !u!114 &7519624933776951518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +50,19 @@ MonoBehaviour:
   _map: {fileID: 0}
   _speed: 1.5
   _targetChangeDistanse: 0.165
+--- !u!114 &878318924190303061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86259638396419348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff4a1412d26548448308e7ac14f0b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isTurnedToRight: 1
 --- !u!1 &4193072323028609196
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ Animator:
   m_GameObject: {fileID: 6231093291306288274}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de73cdbd51b1a4e429a03c2fe0f351a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca497cfbd28b27a4581445173c44141d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

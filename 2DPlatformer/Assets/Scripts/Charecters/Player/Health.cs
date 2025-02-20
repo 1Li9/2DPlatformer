@@ -1,17 +1,16 @@
 using System;
 
-public class Health : PlayerComponent, IDamageble
+public class Health : Player, IDamageble
 {
     public event Action Dead;
-    public bool IsAlive { get; private set; } = true;
 
     public void TakeDamage()
     {
-        if (IsAlive == false)
+        if (StateMachine.GetBool(PlayerAnimatorData.Params.IsAlive) == false)
             return;
 
-        IsAlive = false;
-        Player.Animator.SetTrigger("Dead");
+        StateMachine.SetBool(PlayerAnimatorData.Params.IsAlive, false);
+        StateMachine.SetTrigger(PlayerAnimatorData.Params.Dead);
         Dead?.Invoke();
     }
 }

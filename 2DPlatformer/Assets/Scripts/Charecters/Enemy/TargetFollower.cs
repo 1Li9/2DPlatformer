@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteFlipper))]
+[RequireComponent(typeof(CharacterFlipper))]
 public class TargetFollower : MonoBehaviour
 {
     [SerializeField] private TargetsMap _map;
@@ -8,10 +8,10 @@ public class TargetFollower : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float _targetChangeDistanse;
 
-    private SpriteFlipper _flipper;
+    private CharacterFlipper _flipper;
 
     private void Start() =>
-        _flipper = GetComponent<SpriteFlipper>();
+        _flipper = GetComponent<CharacterFlipper>();
 
     private void Update() =>
         Follow();

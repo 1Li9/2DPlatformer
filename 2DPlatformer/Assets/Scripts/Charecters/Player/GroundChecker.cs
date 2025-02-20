@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class GroundChecker : PlayerComponent
+public class GroundChecker : Player
 {
-    private readonly float _velosityGate = .2f;
-
     [SerializeField] private Transform _groundCheck;
     [Range(0f, 1f)]
     [SerializeField] private float _groundCheckDistance;
@@ -21,11 +19,10 @@ public class GroundChecker : PlayerComponent
         RaycastHit2D ray = Physics2D.Raycast(_groundCheck.position, Vector2.down, _groundCheckDistance, _groundLayer);
         Debug.DrawLine(_groundCheck.position, _groundCheck.position + Vector3.down * _groundCheckDistance, Color.red);
 
-        if (ray.rigidbody != null & Mathf.Abs(Player.Rigidbody.velocity.y) <= _velosityGate)
-            Player.OnGround = true;
+        if (ray.rigidbody != null)
+            StateMachine.SetBool(PlayerAnimatorData.Params.OnGround, true);
         else
-            Player.OnGround = false;
-
-        Player.Animator.SetBool("OnGround", Player.OnGround);
+            StateMachine.SetBool(PlayerAnimatorData.Params.OnGround, false);
     }
+
 }

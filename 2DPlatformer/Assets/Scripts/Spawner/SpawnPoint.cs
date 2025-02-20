@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject _view;
+    private readonly int _cointsCount = 1;
+
+    [SerializeField] private View _view;
 
     private bool _canSpawn = true;
 
-    private void Start() =>
-        _view.gameObject.SetActive(false);
+    private void Awake() =>
+        _view.gameObject.SetActive(false);  
 
-    public void Release()
+    public int GetCoins()
     {
         if (_canSpawn)
-            return;
+            return 0;
 
         _view.gameObject.SetActive(false);
         _canSpawn = true;
+        return _cointsCount;
     }
 
     public bool CanSpawn()

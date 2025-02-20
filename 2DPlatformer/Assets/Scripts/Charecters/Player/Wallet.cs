@@ -11,8 +11,7 @@ public class Wallet : MonoBehaviour
     {
         if (collision.TryGetComponent(out SpawnPoint point))
         {
-            point.Release();
-            _coinsCount++;
+            _coinsCount += point.GetCoins();
             CoinsCountChanged?.Invoke(_coinsCount);
         }
     }
