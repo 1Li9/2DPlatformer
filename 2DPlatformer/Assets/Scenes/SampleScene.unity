@@ -3165,15 +3165,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 858048459}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &162899367 stripped
+--- !u!114 &162899369 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5591970174066105818, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7789533184681882444, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 858048459}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db295f5261abe91478a91ee22e705e37, type: 3}
+  m_Script: {fileID: 11500000, guid: af92feff7ed539e4bbc58a3b317064da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &206521079
@@ -3293,7 +3293,7 @@ GameObject:
   - component: {fileID: 349342702}
   - component: {fileID: 349342701}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: CoinsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3312,11 +3312,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer: {fileID: 1523080906}
-  _points:
-  - {fileID: 2125045967}
-  - {fileID: 767703063}
-  - {fileID: 1320526046}
-  - {fileID: 162899367}
+  _coins:
+  - {fileID: 2125045970}
+  - {fileID: 1722947671}
+  - {fileID: 1402141051}
+  - {fileID: 162899369}
   _timePeriod: 5
 --- !u!4 &349342702
 Transform:
@@ -3391,7 +3391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224265644357368094, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (2)
+      value: Coin (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3893,17 +3893,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 2135054458}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &767703063 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5591970174066105818, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
-  m_PrefabInstance: {fileID: 2135054458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db295f5261abe91478a91ee22e705e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &789675964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5216,7 +5205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224265644357368094, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (3)
+      value: Coin (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5677,15 +5666,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 357015616}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1320526046 stripped
+--- !u!114 &1402141051 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5591970174066105818, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7789533184681882444, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 357015616}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db295f5261abe91478a91ee22e705e37, type: 3}
+  m_Script: {fileID: 11500000, guid: af92feff7ed539e4bbc58a3b317064da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1517495910
@@ -6116,6 +6105,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453423624564925335, guid: 3bfb0cd57f754cd469232e9a99e26911, type: 3}
   m_PrefabInstance: {fileID: 235036345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1722947671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7789533184681882444, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
+  m_PrefabInstance: {fileID: 2135054458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af92feff7ed539e4bbc58a3b317064da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1731967355
 GameObject:
   m_ObjectHideFlags: 0
@@ -6415,22 +6415,22 @@ Transform:
   - {fileID: 996655547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2125045967 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5591970174066105818, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
-  m_PrefabInstance: {fileID: 3877786407089654234}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db295f5261abe91478a91ee22e705e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2125045968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
   m_PrefabInstance: {fileID: 3877786407089654234}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2125045970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7789533184681882444, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
+  m_PrefabInstance: {fileID: 3877786407089654234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af92feff7ed539e4bbc58a3b317064da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126919596
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,7 +6545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224265644357368094, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (1)
+      value: Coin (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6724,7 +6724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 224265644357368094, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_Name
-      value: SpawnPoint (0)
+      value: Coin (0)
       objectReference: {fileID: 0}
     - target: {fileID: 7137941984682979784, guid: 5ac5430b44ded07429f5882814cb1ef6, type: 3}
       propertyPath: m_LocalPosition.x

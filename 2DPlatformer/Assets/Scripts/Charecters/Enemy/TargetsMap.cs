@@ -19,7 +19,9 @@ public class TargetsMap : MonoBehaviour
 
     public void SelectNextTarget()
     {
-        if (++_currentTargetIndex >= _targets.Length)
+        _currentTargetIndex++;
+
+        if (_currentTargetIndex >= _targets.Length)
             _currentTargetIndex = 0;
 
         CurrentTarget = _targets[_currentTargetIndex];

@@ -17,7 +17,7 @@ public class TargetFollower : MonoBehaviour
 
     private void Follow()
     {
-        float xTargetPosition = _map.CurrentTarget.transform.position.x;
+        float xTargetPosition = _map.CurrentTarget.Position.x;
         float xDirection = xTargetPosition - transform.position.x;
 
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(xTargetPosition, transform.position.y), Time.deltaTime * _speed);
