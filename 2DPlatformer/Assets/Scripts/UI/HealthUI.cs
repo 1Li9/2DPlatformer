@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthUI : MonoBehaviour
 {
     [SerializeField] private Timer _timer;
-    [SerializeField] private Health _health;
+    [SerializeField] private Player _player;
 
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Image _panel;
@@ -22,10 +22,10 @@ public class HealthUI : MonoBehaviour
     }
 
     private void OnEnable() =>
-        _health.Dead += Show;
+        _player.Dead += Show;
 
     private void OnDisable() =>
-        _health.Dead -= Show;
+        _player.Dead -= Show;
 
     private void Show()
     {

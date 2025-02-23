@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputReader : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class InputReader : MonoBehaviour
 
     public event Action<InputInformation> OnInputChanged;
 
-    private void Update() =>
+    private void LateUpdate() =>
         ProcessInput();
 
     private void ProcessInput() =>

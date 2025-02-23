@@ -9,7 +9,7 @@ public class TargetsMap : MonoBehaviour
 
     public Target CurrentTarget { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         if (_targets.Length == 0)
             throw new ArgumentOutOfRangeException(nameof(_targets) + " length equals zero");

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterFlipper))]
 public class TargetFollower : MonoBehaviour
 {
     [SerializeField] private TargetsMap _map;
@@ -10,8 +9,8 @@ public class TargetFollower : MonoBehaviour
 
     private CharacterFlipper _flipper;
 
-    private void Start() =>
-        _flipper = GetComponent<CharacterFlipper>();
+    private void Awake() =>
+        _flipper = new(this);
 
     private void Update() =>
         Follow();

@@ -1,14 +1,21 @@
 using UnityEngine;
 
-public class CharacterFlipper : MonoBehaviour
+public class CharacterFlipper
 {
-    [SerializeField] private bool _isTurnedToRight;
+    private MonoBehaviour _context;
+    private Quaternion _mirrorRotation;
 
-    public bool IsTurnedToRight { get => _isTurnedToRight; private set => _isTurnedToRight = value; }
+    public CharacterFlipper(MonoBehaviour context)
+    {
+        _context= context;
+        _mirrorRotation = Quaternion.Euler(0f, 180f, 0f);
+    }
+
+    public bool IsTurnedToRight { get; private set; } = true;
 
     public void Flip()
     {
-        transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
+        _context.transform.rotation *= _mirrorRotation;
         IsTurnedToRight = !IsTurnedToRight;
     }
 }

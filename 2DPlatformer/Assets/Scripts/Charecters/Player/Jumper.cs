@@ -1,37 +1,12 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(InputReader))]
-public class Jumper : Player
+public class Jumper
 {
-    private const KeyCode JumpButton = KeyCode.Space;
-
-    [SerializeField] private float _jumpForce;
-
     private Rigidbody2D _rigidbody;
-    private InputReader _reader;
 
-    private void OnEnable()
-    {
-        _reader = GetComponent<InputReader>();
-        _reader.OnInputChanged += Jump;
-    }
+    public Jumper(IMoveble context) =>
+        _rigidbody = context.GetRigidbody();
 
-    private void OnDisable() =>
-        _reader.OnInputChanged -= Jump;
-
-    private void Start() =>
-        _rigidbody = GetComponent<Rigidbody2D>();
-
-    private void Jump(InputInformation information)
-    {
-        bool canJump = StateMachine.GetBool(PlayerAnimatorData.Params.OnGround) &
-            StateMachine.GetBool(PlayerAnimatorData.Params.IsAlive) == true &
-            information.KeyCode == JumpButton;
-
-        if (canJump == false)
-            return;
-
-        StateMachine.SetTrigger(PlayerAnimatorData.Params.Jump);
-        _rigidbody.AddForce(new Vector2(0, _jumpForce));
-    }
+    public void Jump(float jumpForce) =>
+        _rigidbody.AddForce(Vector2.up * jumpForce);
 }

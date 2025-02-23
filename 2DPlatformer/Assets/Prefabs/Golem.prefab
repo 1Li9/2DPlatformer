@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6930352813290437206}
   - component: {fileID: 7519624933776951518}
-  - component: {fileID: 878318924190303061}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -50,19 +49,6 @@ MonoBehaviour:
   _map: {fileID: 0}
   _speed: 1.5
   _targetChangeDistanse: 0.165
---- !u!114 &878318924190303061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86259638396419348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff4a1412d26548448308e7ac14f0b11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isTurnedToRight: 1
 --- !u!1 &4193072323028609196
 GameObject:
   m_ObjectHideFlags: 0

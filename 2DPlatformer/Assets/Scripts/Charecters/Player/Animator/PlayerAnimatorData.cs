@@ -4,10 +4,10 @@ public static class PlayerAnimatorData
 {
     public static class Params
     {
-        public static readonly int OnGround = Animator.StringToHash(nameof(OnGround));
-        public static readonly int IsRunning = Animator.StringToHash(nameof(IsRunning));
-        public static readonly int Jump = Animator.StringToHash(nameof(Jump));
-        public static readonly int IsAlive = Animator.StringToHash(nameof(IsAlive));
+        public static readonly int IsGrounded = Animator.StringToHash(nameof(IsGrounded));
         public static readonly int Dead = Animator.StringToHash(nameof(Dead));
+        public static readonly int IsJumped = Animator.StringToHash(nameof(IsJumped));
+        public static readonly int VerticalVelocity = Animator.StringToHash(nameof(VerticalVelocity));
+        public static readonly int HorizontalSpeed = Animator.StringToHash(nameof(HorizontalSpeed));
     }
 }

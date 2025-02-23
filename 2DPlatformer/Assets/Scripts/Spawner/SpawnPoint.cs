@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    private readonly int _cointsCount = 1;
-
     [SerializeField] private View _view;
+
+    private readonly int _cointsCount = 1;
 
     private bool _canSpawn = true;
 
